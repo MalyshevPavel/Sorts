@@ -7,12 +7,18 @@ public class Main {
         int a[] = {2, 7, 4, 9, 6};
         int b[] = {2, 10, 1, 5, 133, 4};
         int c[] = {0, 3, 12, 4, 8, -2};
+        int d[] = {3, 2, 7, 1, 6, 8, 5};
+        int e[] = {1, 9, 5, 0, 7, 2, 4, 8, 10};
         System.out.print("bubble" + " ");
         prn(EzSorts.bubbleSort(a));
         System.out.print("count" + " ");
         prn(EzSorts.countSort(b));
         System.out.print("insertion" + " ");
         prn(EzSorts.insertionSort(c));
+        System.out.print("heap" + " ");
+        prn(HeapSort.sort(d));
+        System.out.print("quick" + " ");
+        prn(QuickSort.sort(e));
     }
 
     static void prn(int[] a) {
