@@ -2,7 +2,7 @@ package pack;
 
 public class EzSorts {
     public static int[] bubbleSort(int[] arr) {
-        int N = arr.length;
+        int N = arr.length - 1;
         boolean f;
         do {
             f = false;
@@ -12,9 +12,9 @@ public class EzSorts {
                     arr[j] = arr[j + 1];
                     arr[j + 1] = t;
                     f = true;
-                    N--;
                 }
             }
+            N--;
         } while (f);
         return arr;
     }

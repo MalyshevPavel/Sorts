@@ -10,16 +10,18 @@ public class QuickSort {
         if (l >= r) return arr;
         int i = l;
         int j = r;
-        int m = i - (i - j) / 2;
-        while (i < j) {
-            while ((i < m) && (arr[i] <= arr[m])) i++;
-            while ((j > m) && (arr[j] >= arr[m])) j--;
-            if (i < j) swap(arr, i, j);
-            if (i == m) m = j;
-            else if (j == m) m = i;
+        int m = (i + j) / 2;
+        while (i <= j) {
+            while (arr[i] < arr[m]) i++;
+            while (arr[j] > arr[m]) j--;
+            if (i <= j) {
+                swap(arr, i, j);
+                i++;
+                j--;
+            }
         }
-        qSort(arr, l, m);
-        qSort(arr, m + 1, r);
+        if (j > l) qSort(arr, l, j);
+        if (i < r) qSort(arr, i, r);
         return arr;
     }
 
